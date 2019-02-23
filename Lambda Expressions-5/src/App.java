@@ -1,10 +1,17 @@
-interface Executable {
+interface IntExecutable {
 	int check(int a);
 }
 
+interface StringExecutable {
+	int check(String a);
+}
+
+
+
+
 class Runner {
 	
-	public void run(Executable e){
+	public void run(IntExecutable e){
 		System.out.println("Executing code block ...");
 		int value = e.check(12);
 		System.out.println("Value: " + value*100);
@@ -20,7 +27,7 @@ public class App {
 		System.out.println("=================depricated (java 1.6 - 1.7)=======================");
 		
 		runner.run(
-			/*implementing object interface Executable*/ new Executable() {
+			/*implementing object interface Executable*/ new IntExecutable() {
 			 
 			@Override
 			public int check(int a) {
